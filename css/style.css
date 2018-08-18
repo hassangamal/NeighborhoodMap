@@ -1,0 +1,79 @@
+html,
+body 
+{
+    font-family: Arial, sans-serif;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+input 
+{
+    font-size: 12px;
+}
+
+h1
+{
+    color: #525454;
+    width: 100%;
+    text-align: center;
+}
+
+      
+#map
+{
+    height: 500px;
+    width: 100%;
+}
+
+
+#pano 
+{
+    width: 200px;
+    height: 200px;
+}
+
+#heading
+{
+    font-style: bold;
+    color: #A93226;
+}
+    
+#wiki-links
+{
+    color: #3498DB;
+    width: 200px;
+    padding: 5px;
+}
+
+#no_view
+{
+    color: #717D7E;
+}
+
+#search
+{
+    width: 100%;
+}
+
+.delta
+{
+    background: #cccccc;
+    border: 1px solid #999;
+    border-radius: 10px;
+    height: 100%;
+    line-height: 40px;
+    padding: 10px 10px 30px 10px;
+    text-align: left;
+    width: 100%;
+}
+#start
+{
+    padding-bottom: 32px;
+}
+
+.head
+{
+    color: #800000;
+    background-color: #BDC3C7 ;  
+}
