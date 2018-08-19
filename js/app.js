@@ -134,10 +134,32 @@ var ViewModel = function () {
 function selectitem(obj) {
     console.log(obj);
     var content = "";
-    content += '<p>information about' + obj.title + '</p>' +
-        '</br> <p>location :' + obj.location.lat + " , " + obj.location.lat + '</p></br> ' ;
-
-    var marker = new google.maps.Marker({
+    title=obj.title;
+    var placesAPI = "https://api.foursquare.com/v2/venues/search?" +
+        "client_id=" + clientId + "&client_secret=" + clientSecret +
+        "&v=20180323" + "&limit=1&ll=" + obj.location.lat + "," + obj.location.lng + "&query=" + obj.title;
+    var request = $.ajax({
+        url: placesAPI,
+        method: "GET",
+        dataType: "json",
+        async: false
+    });
+    request.done(function (data) {
+        var obj = data.response.venues[0];
+        if (obj) {
+            content += '<p>information about' +title + '</p>' +
+                '</br> <p>location :' + obj.location.lat + " , " + obj.location.lat + '</p></br> ' +
+                '</br> <p>Adress :' + obj.location.address + '</p></br> ' +
+                '</br> <p>country :' + obj.location.country + '</p></br> ';
+        }
+        else {
+            content += '<p>information about' + title + '</p>' +
+                '</br> <p>No Informantion about this location yet.</p></br> ';
+        }
+    });
+    request.fail(function () {
+        content = 'Fail To Load Data please check palce or this palce not found';
+    });  var marker = new google.maps.Marker({
         position: obj.location,
         map: map,
         title: obj.title,
