@@ -77,3 +77,7 @@ h1
     color: #800000;
     background-color: #BDC3C7 ;  
 }
+.clicker:hover
+{    
+    cursor: pointer;
+}

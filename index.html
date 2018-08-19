@@ -1,36 +1,33 @@
-<!DOCTYPE html>
-<html>
+    <!DOCTYPE html>
+    <html>
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&callback=initialize"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="css/style.css">
-</head>
+    <head>
+        <title>NeighborhoodMap</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="css/style.css">
+    </head>
 
-<body>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-4">
-                <input type="text" data-bind="textInput: txt_search">
-                <ul data-bind="foreach: location_search">
-                    <li data-bind="text: title"></li>
-                </ul>
-            </div>
-            <div class="col-lg-8">
-                <div id="map"></div>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <input type="text" data-bind="textInput: txt_search">
+                    <ul data-bind="foreach: location_search">
+                        <li class="clicker" data-bind="text: title,click:selectitem"></li>
+                    </ul>
+                </div>  
+                <div class="col-lg-8">
+                    <div id="map"></div>
+                </div>
             </div>
         </div>
-    </div>
-    <script src="js/knockout-3.4.2.js"></script>
-    <script src="js/app.js"></script>
+        <script src="js/knockout-3.4.2.js"></script>
+        <script src="js/app.js"></script>
 
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD-QvgReKX_7YFy4TCMQV6qHkQtC4mkBbY&libraries=places&callback=initMap"
-async defer></script>
-</body>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD-QvgReKX_7YFy4TCMQV6qHkQtC4mkBbY&libraries=places&callback=initMap" onerror="myerrorhandler()" async defer></script>
+    </body>
 
-</html>
+    </html> 
