@@ -104,7 +104,6 @@ function show_location(map, location) {
             }
         };
     })(marker, toggleBounce));
-    // Setting trigger Bounce event marker to call it from the view
 }
 var ViewModel = function () {
     var self = this;
